@@ -47,7 +47,7 @@ public class Main {
         System.out.println("задача 3.1");
         int payOfParking = 1000;
         int day = 0;
-        while (payOfParking > 0) {
+        while (payOfParking >= 100) {
             day++;
             if (day % 5 == 0) {
                 System.out.println("Бесплатный день- " + day + " бюджет- " + payOfParking);
@@ -63,7 +63,7 @@ public class Main {
         System.out.println("задача 3.2");
         int payOfParking = 1000;
         int day = 0;
-        for (; payOfParking > 0; ) {
+        for (; payOfParking >= 100; ) {
             day++;
             if (day % 5 == 0) {
                 System.out.println("Бесплатный день- " + day + " бюджет- " + payOfParking);
@@ -102,11 +102,12 @@ public class Main {
             if (minutes % 10 == 0) {
                 overheats++;
                 minutes += 2;
-                System.out.println("Сучился перегрев. Текущий заряд: " + charge + "%");
+                System.out.println("Случился перегрев. Текущий заряд:" + charge + "%");
+                if (overheats == 3) {
+                    System.out.println("Зарядка остановлена. Текущий заряд:" + charge + "%");
+                    break;
+                }
                 continue;
-            }
-            if (overheats == 3) {
-                break;
             }
             System.out.println("Время зарядки составило " + minutes + " минут. Уровень заряда составляет " + charge + "%");
         }
