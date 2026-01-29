@@ -27,7 +27,8 @@ public class Main {
         int distanceTraveled = 0;
         do {
             System.out.println("Держитесь! Осталось " + distance + " метров");
-            distance = distance - (distanceTraveled + checkpoint);
+            distance = distance - checkpoint;
+            distanceTraveled = distanceTraveled + checkpoint;
         } while (distance >= 0);
     }
 
@@ -100,14 +101,14 @@ public class Main {
             charge += 2;
             if (minutes % 10 == 0) {
                 overheats++;
-                minutes+=2;
-            System.out.println("Сучился перегрев. Текущий заряд: " + charge + "%");
+                minutes += 2;
+                System.out.println("Сучился перегрев. Текущий заряд: " + charge + "%");
                 continue;
             }
             if (overheats == 3) {
                 break;
             }
-            System.out.println("Время зарядки составило " + minutes + " минут. Уровень заряда составляет "+charge+"%");
+            System.out.println("Время зарядки составило " + minutes + " минут. Уровень заряда составляет " + charge + "%");
         }
     }
 }
