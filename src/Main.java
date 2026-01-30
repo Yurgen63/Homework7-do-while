@@ -103,7 +103,7 @@ public class Main {
                 minutes += 2;
                 System.out.println("Случился перегрев. Текущий заряд:" + charge + "%");
                 if (overheats == 3) {
-                    System.out.println("Зарядка прекращена. Время зарядки составило " + minutes + " минуты. Текущий заряд:" + charge + "%");
+                    System.out.println("Зарядка прекращена. Время зарядки составило " + minutes + " минут. Текущий заряд:" + charge + "%");
                     break;
                 }
                 continue;
