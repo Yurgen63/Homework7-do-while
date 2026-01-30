@@ -103,13 +103,15 @@ public class Main {
                 minutes += 2;
                 System.out.println("Случился перегрев. Текущий заряд:" + charge + "%");
                 if (overheats == 3) {
+                    minutes -= 2;
                     System.out.println("Зарядка прекращена. Время зарядки составило " + minutes + " минут. Текущий заряд:" + charge + "%");
-                    break;
+                    break;//думаю в этом блоке можно было бы убрать вывод на экран, так как в консоли слишком много информации получается
                 }
                 continue;
             }
             charge += 2;
             System.out.println("Время зарядки составило " + minutes + " минут. Уровень заряда составляет " + charge + "%");
         }
+        System.out.println("Время зарядки составило " + minutes + " минут");
     }
 }
