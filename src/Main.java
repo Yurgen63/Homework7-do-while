@@ -98,17 +98,17 @@ public class Main {
         int overheats = 0;
         while (charge < 100 && overheats <= 3) {
             minutes++;
-            charge += 2;
             if (minutes % 10 == 0) {
                 overheats++;
                 minutes += 2;
                 System.out.println("Случился перегрев. Текущий заряд:" + charge + "%");
                 if (overheats == 3) {
-                    System.out.println("Зарядка остановлена. Текущий заряд:" + charge + "%");
+                    System.out.println("Зарядка прекращена. Время зарядки составило " + minutes + " минут. Текущий заряд:" + charge + "%");
                     break;
                 }
                 continue;
             }
+            charge += 2;
             System.out.println("Время зарядки составило " + minutes + " минут. Уровень заряда составляет " + charge + "%");
         }
     }
